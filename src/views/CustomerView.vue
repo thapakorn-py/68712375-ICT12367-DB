@@ -5,7 +5,7 @@
     
     <!-- ตารางแสดงข้อมูลลูกค้า -->
      <div class="text-end mb-3">
-      <a href="/add_customer" class="btn btn-primary">Add+</a>
+      <router-link to="/add_customer" class="btn btn-primary">Add+</router-link>
      </div>
     <table class="table table-bordered table-striped">
       <thead class="table-dark">
@@ -46,6 +46,7 @@
 
 <script>
 // import ฟังก์ชันจาก Vue (Composition API)
+import { apiUrl } from '../api';
 import { ref, onMounted } from "vue";
 
 export default {
@@ -65,7 +66,7 @@ export default {
     const fetchdata = async () => {
       try {
         // เรียก API (PHP)
-        const response = await fetch("http://localhost/68701129-ICT12367-DB/php.api/show_customer.php");
+        const response = await fetch(apiUrl('show_customer.php'));
 
         // ตรวจสอบว่าการเรียกสำเร็จหรือไม่
         if (!response.ok) {

@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <router-link class="navbar-brand fw-bold" to="/">Loba Shop</router-link>
+      <router-link class="navbar-brand fw-bold" to="/">Nick Shop</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -15,11 +15,8 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/showproduct">Show Product</router-link>
-          </li>
            <li class="nav-item">
-            <router-link class="nav-link" to="/Customer">Customer</router-link>
+            <router-link class="nav-link" to="/customer">Customer</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/employee">Employee</router-link>
@@ -30,10 +27,10 @@
             Contact
           </button>
           <ul class="dropdown-menu">
-            <li><router-link class="dropdown-item" :to="{ name: '/contacts' }">Contact</router-link></li>
-            <li><router-link class="dropdown-item" :to="{ name: '/add_contacts' }">เพิ่มข้อมูล</router-link></li>
+            <li><router-link class="dropdown-item" :to="{ name: 'contacts' }">Contact</router-link></li>
+            <li><router-link class="dropdown-item" :to="{ name: 'add_contacts' }">เพิ่มข้อมูล</router-link></li>
             <li><hr class="dropdown-divider"></li>
-            <li><router-link class="dropdown-item" :to="{ name: '/show_contacts' }">แสดงข้อมูล</router-link></li>
+            <li><router-link class="dropdown-item" :to="{ name: 'contacts' }">แสดงข้อมูล</router-link></li>
           </ul>
 
         </li>

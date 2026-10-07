@@ -31,6 +31,8 @@
 
 
 <script>
+import { apiUrl } from '../api';
+
 export default {
   data() {
     return {
@@ -47,7 +49,7 @@ export default {
   methods: {
     async addData() {
       try {
-        const res = await fetch("http://localhost/68701129-ICT12367-DB/php.api/add_customer.php", {
+        const res = await fetch(apiUrl('add_customer.php'), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(this.customer)

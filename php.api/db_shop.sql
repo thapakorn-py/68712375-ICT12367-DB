@@ -3,9 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2026 at 04:33 AM
+-- Generation Time: Oct 07, 2026 at 08:53 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
+
+CREATE DATABASE IF NOT EXISTS `db_shop`
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+USE `db_shop`;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,6 +72,21 @@ CREATE TABLE `employees` (
 INSERT INTO `employees` (`emp_id`, `firstName`, `lastName`, `phone`, `username`, `password`) VALUES
 (00000001, 'Somchai', 'Wongdee', '0812345678', 'somchaiw', 'password123'),
 (00000002, 'Anong', 'Srisuk', '0898765432', 'anongs', 'securepass456');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `contact_id` int(11) NOT NULL,
+  `fullname` varchar(100) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `detail` text NOT NULL,
+  `email` varchar(254) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -153,6 +173,12 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`emp_id`);
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`contact_id`);
+
+--
 -- Indexes for table `orderdetails`
 --
 ALTER TABLE `orderdetails`
@@ -191,6 +217,12 @@ ALTER TABLE `customers`
 --
 ALTER TABLE `employees`
   MODIFY `emp_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT COMMENT 'รหัสพนักงาน', AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `orderdetails`
